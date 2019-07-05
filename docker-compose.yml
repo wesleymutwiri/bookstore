@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    # volumes:
+    #   - postgres_data:/var/lib/postgresql/data/
+    # ports:
+    #   - "5432:5432"
+  web:
+    build: .
+    command: python3 /bookstore/manage.py runserver 0.0.0.0:8990
+    volumes:
+      - .:/bookstore
+    ports:
+      - 8990:8990
+    depends_on:
+      - db
+
+# volumes:
+#   postgres_data:
