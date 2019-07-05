@@ -4,3 +4,4 @@ virtual/
 *.pyc
 .env
 geckodriver.log
+Pipfile.lock
