@@ -1,4 +1,18 @@
 {% extends 'structure/base.html' %}
 {% block content %}
+{% for book in books %}
+{% if books %}
+<div class="book">
+    <div class="book-header">
+        {{book.title}}
+    </div>
+    <div class="image">
+        <img src="{{book.image.url}}" alt="{{image.title}}">
+    </div>
+</div>
+{% else %}
+<p>There are currently no books available</p>
+{% endif %}
+{% endfor%}
 <p>Test is working </p>
 {% endblock%}
