@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from . import forms
-from . import models
+from .models import Book, Profile, Category
 
 def home_page(request):
-	return render(request, 'bookstore/home.html')
+	books = Book.objects.all
+	return render(request, 'bookstore/home.html', {"books":books})
 
 def category_page(request):
 	return render(request, 'bookstore/category_page.html')

@@ -21,6 +21,8 @@ def save_user_profile(sender, instance, **kwargs):
 
 class Category(models.Model):
     name = models.CharField(max_length=120,blank=False)
+    
+
 
 def user_directory_path(category, filename):
     return '{0}/{1}'.format(category, filename)
