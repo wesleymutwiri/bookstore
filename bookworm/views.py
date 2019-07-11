@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . import forms
+from .forms import BookForm, ProfileForm
 from .models import Book, Profile, Category
 
 def home_page(request):

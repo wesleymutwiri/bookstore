@@ -38,3 +38,14 @@ class Book(models.Model):
     @classmethod
     def get_all_books_in_a_category(cls, category):
         books = cls.object.filter(category__category=categorys_name)
+
+    # @classmethod
+    # def get_recent_books(cls, uploaded_date)
+class BookInstance(models.Model):
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='unique ID for the book')
+    book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
+    imprint = models.CharField(max_length=200)
+    downloaded = models.DateTimeField(auto_now_add=True)
+
+    DOWNLOAD_STATUS = (('d', 'Downloaded'), ('a', 'Available'))
+    status = models.CharField(max_length=1, choices=DOWNLOAD_STATUS, blank=True, default='a', )
