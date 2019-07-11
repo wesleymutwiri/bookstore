@@ -1,18 +1,52 @@
 {% extends 'structure/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block styles%}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{%static 'css/home.css' %}">
+{%endblock%}
 {% block content %}
-{% for book in books %}
-{% if books %}
-<div class="book">
-    <div class="book-header">
-        {{book.title}}
-    </div>
-    <div class="image">
-        <img src="{{book.image.url}}" alt="{{image.title}}">
+<div class="container">
+        <div class="row">
+            <div class="col">
+            <img src="{% static 'img/coverimage.png'%}" alt="cover image here" id="cover-image">
+        </div>
+        <div class="col">
+
+                <h2 class="main-text">
+                    <p id="smallname"> The World of </p><p id="bigname"> Abstract Art</p></h2>
+                    <div class="row">
+                        <div class="col">
+                            <p class="header light-text">Author</p>
+                            <p class="header heavy-text">Emily Robins</p>
+                        </div>
+                        <div class="col">
+                            <p class="header light-text">Type</p>
+                            <p class="header heavy-text">Design Thinking</p>   
+                        </div>
+                        <div class="col">
+                            <p class="header light-text">Layout</p>
+                            <p class="header heavy-text">Printed & PDF</p>
+                        </div>
+                    </div>
+        </div>
     </div>
 </div>
-{% else %}
-<p>There are currently no books available</p>
-{% endif %}
-{% endfor%}
-<p>Test is working </p>
+
+    {% for book in books %}
+    <div class="book">
+        <div class="book-header">
+            {{book.title}}
+        </div>
+        <div class="image">
+            <img src="{{book.image.url}}" alt="{{image.title}}">
+        </div>
+    </div>
+    {% empty %}
+    <p>There are currently no books available</p>
+    
+    {% endfor%}
+    <p>Test is working </p>
 {% endblock%}
+</div>
+</div>
