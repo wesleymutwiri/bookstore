@@ -1,0 +1,74 @@
+/*
+Color scheme 
+#feebe4; - lighter pink white
+#fec8b6; - pink;
+#0d0505; - black;
+#522723; - brown;
+#f89b06; darker yellow;
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Baloo', cursive;
+    /* margin: 40px; */
+    background: #feebe4;
+    height: 100%;
+    line-height: 1.7;
+    /* padding: 30px; */
+    width: 100%;
+}
+/* .image-header {
+    height: 60vh;
+    background: #feebe4;
+    position: relative;
+
+}
+.image-header {
+    padding: 30px;
+    width: 100%;
+}
+.image-header .right-side {
+    width: 50%;
+
+} */
+#cover-image{
+    height: 400px;
+    padding: 30px;
+    width: 300px;
+}
+.text-box {
+    /* position: absolute; */
+    text-align: center;
+}
+.main-text {
+    color: #522723;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    /* word-spacing: 3px;  */
+    text-align: justify;
+}
+#smallname {
+    font-weight: 100;
+    /* display: block; */
+    font-size: 30px;
+    color: #52272386;
+}
+#bigname{
+    /* display: block; */
+    font-size: 45px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    font-family: 'Baloo', cursive;
+
+}
+.heavy-text {
+
+}
+.light-text {
+    color: #5227237a;
+    font-weight: 100;
+}
