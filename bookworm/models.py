@@ -8,8 +8,12 @@ class Profile(models.Model):
     user_name = models.CharField(max_length=100)
     bio = models.TextField(max_length=500, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    birth_date = models.DateField(blank=True)
+    birth_date = models.DateField(blank=True, null=True)
+    changes = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return self.user_name
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -22,6 +26,8 @@ def save_user_profile(sender, instance, **kwargs):
 class Category(models.Model):
     name = models.CharField(max_length=120,blank=False)
     
+    def __str__(self):
+        return self.name
 
 
 def user_directory_path(category, filename):
@@ -34,6 +40,9 @@ class Book(models.Model):
     category = models.ManyToManyField(Category, blank=True)
     image = models.ImageField(upload_to='coverImage/', blank=True)
     upload = models.FileField(upload_to=user_directory_path) 
+
+    def __str__(self):
+        return self.title
 
     @classmethod
     def get_all_books_in_a_category(cls, category):

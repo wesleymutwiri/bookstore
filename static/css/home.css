@@ -65,10 +65,21 @@ body {
     font-family: 'Baloo', cursive;
 
 }
+#book {
+    padding-left: 30px;
+}
 .heavy-text {
 
 }
 .light-text {
     color: #5227237a;
     font-weight: 100;
+}
+.image img{
+    height: 200px;
+    padding-left: 20px;
+    width: 300px;
+}  
+.button {
+    padding-left: 20px;
 }

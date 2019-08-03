@@ -29,24 +29,29 @@
                             <p class="header heavy-text">Printed & PDF</p>
                         </div>
                     </div>
+                    <div class="row">
+                        <a href="" class="download-button">Download</a>
+                    </div>
         </div>
     </div>
 </div>
 
     {% for book in books %}
-    <div class="book">
+    <div class="col-4" id="book">
         <div class="book-header">
             {{book.title}}
         </div>
         <div class="image">
             <img src="{{book.image.url}}" alt="{{image.title}}">
+            <div class="row">
+                <a href="{{book.upload.url}}" class="button">Download</a>
+            </div>
         </div>
     </div>
     {% empty %}
     <p>There are currently no books available</p>
     
     {% endfor%}
-    <p>Test is working </p>
 {% endblock%}
 </div>
 </div>

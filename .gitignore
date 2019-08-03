@@ -5,3 +5,5 @@ virtual/
 .env
 geckodriver.log
 Pipfile.lock
+media
+
